@@ -59,13 +59,6 @@ export default function Home() {
 
       return () => clearInterval(timer);
     }, []);
-  useEffect(() => {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }, []);
 
   const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('');
 
@@ -121,7 +114,7 @@ export default function Home() {
     ).length;
 
     const conferencePublicationsCount = publications.filter(
-      (pub) => pub.kind === 'Conference Proceedings'
+      (pub) => pub.kind === "Conference Publications"
     ).length;
 
   return (
@@ -181,7 +174,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 animate-type">
-                  Researcher • Engineer • Lifelong Learner
+                  Researcher • Engineer •  Lifelong Learner
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                   <HashLink smooth scroll={scrollWithOffset}
