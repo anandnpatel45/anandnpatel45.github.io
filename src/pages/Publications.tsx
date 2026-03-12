@@ -13,12 +13,17 @@ interface Publication {
   link: string;
   kind: string; // Added kind to handle different publication types
 }
+type ProfessionalAchievement = {
+  value: number;
+  label: string;
+};
 
 export default function Publications() {
   const [publications, setPublications] = useState<Publication[]>([]);
+  const [achievements, setAchievements] = useState<ProfessionalAchievement[]>([]);
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
     'Journal Publications': true,
-    'Conference Proceedings': true,
+    'Conference Publications': true,
     'Other': true,
   });
 
@@ -27,6 +32,10 @@ export default function Publications() {
       .then((res) => res.json())
       .then((data) => setPublications(data))
       .catch((err) => console.error('Failed to load publications:', err));
+    fetch('/Media/ProfessionalAchievements.json')
+        .then((res) => res.json())
+        .then((data) => setAchievements(data))
+        .catch((err) => console.error('Failed to load professional achievements:', err));
   }, []);
 
   const colorPalette = [
@@ -81,6 +90,13 @@ export default function Publications() {
   ];
 
   const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
+  const journalPublicationsCount = publications.filter(
+      (pub) => pub.kind === "Journal Publications"
+    ).length;
+
+  const conferencePublicationsCount = publications.filter(
+      (pub) => pub.kind === "Conference Publications"
+    ).length;
 
   // Create a mapping of year to color index
   const yearToColorMap = {};
@@ -107,7 +123,7 @@ export default function Publications() {
   }, {} as { [key: string]: Publication[] });
 
   // Define the order of predefined sections
-  const sectionOrder = ['Journal Publications', 'Conference Proceedings', 'Other'];
+  const sectionOrder = ['Journal Publications', 'Conference Publications', 'Other'];
 
   // Add sections dynamically for any unexpected kind values
   const dynamicSections = Object.keys(groupedPublications).filter(
@@ -161,9 +177,9 @@ export default function Publications() {
                           return (
                             <div
                               key={index}
-                              className={`pl-6 py-4 transition-colors duration-300 border-l-4 ${color.border} ${color.bg}`}
+                              className={`pl-2 py-1 transition-colors duration-300 border-l-4 ${color.border} ${color.bg}`}
                             >
-                              <h2 className={`text-2xl font-bold text-gray-900 dark:text-white transition-colors duration-300 ${color.hoverText}`}>
+                              <h2 className={`text-[20px] font-bold text-gray-900 dark:text-white transition-colors duration-300 ${color.hoverText}`}>
                                 <HashLink smooth to={pub.link} scroll={scrollWithOffset}
                                  target="_blank" rel="noopener noreferrer">{pub.title}</HashLink>
                               </h2>
@@ -172,21 +188,21 @@ export default function Publications() {
                                   pub.authors.split(', ').map((author, index) => 
                                     author === "A Patel" ? <strong key={index}>{author}</strong> : author
                                   ).reduce((prev, curr) => [prev, ', ', curr])
-                                }
-                              </p>
-                              <p className="text-gray-600 dark:text-gray-300 mt-1">
-                                <span className="italic text-gray-800 dark:text-gray-300">{pub.conference}</span> • 
+                                } {" • "}
+                              {/* </p> */}
+                              {/* <p className="text-gray-600 dark:text-gray-300 mt-1"> */}
+                                <span className="italic text-gray-800 dark:text-gray-300">{pub.conference}</span>{" • "}
                                 <span className={`font-bold ${color.text}`}>{pub.year}</span>
                               </p>
-                              <p className="text-gray-600 dark:text-gray-300 mt-4">{pub.abstract}</p>
-                              <div className="mt-4">
+                              <p className="text-gray-600 dark:text-gray-300 mt-4">{pub.abstract}{" "}
                                 <HashLink smooth to={pub.link} scroll={scrollWithOffset}
                                 target="_blank" rel="noopener noreferrer"
                                   className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
-                                >
-                                  Read More →
+                                >Read More →
                                 </HashLink>
-                              </div>
+                              </p>
+                              {/* <div className="mt-4"> */}
+                              {/* </div> */}
                             </div>
                           );
                         })}
@@ -201,22 +217,35 @@ export default function Publications() {
       </div>
 
       
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
   <div className="mt-16 p-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Professional Achievements</h2>
     <div className="flex flex-wrap justify-center gap-8">
-      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-        <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">1</div>
-        <div className="text-gray-600 dark:text-gray-300 mt-2">Citations</div>
-      </div>
-      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-        <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">4</div>
-        <div className="text-gray-600 dark:text-gray-300 mt-2">Publications</div>
-      </div>
-      {/* <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-        <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">5</div>
-        <div className="text-gray-600 dark:text-gray-300 mt-2">Research awards</div>
-      </div> */}
+      
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+          <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">{journalPublicationsCount}</div>
+          <div className="text-gray-600 dark:text-gray-300 mt-2">Journal Publications</div>
+        </div>
+
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+          <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">{conferencePublicationsCount}</div>
+          <div className="text-gray-600 dark:text-gray-300 mt-2">Conference Publications</div>
+        </div>
+        {achievements.map((achievement, index) => (
+          <div
+            key={achievement.label}
+            className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+              {achievement.value}
+            </div>
+            <div className="text-gray-600 dark:text-gray-300 mt-2">
+              {achievement.label}
+            </div>
+          </div>
+        ))}
+
       {/* <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
         <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">5</div>
         <div className="text-gray-600 dark:text-gray-300 mt-2">Research awards</div>

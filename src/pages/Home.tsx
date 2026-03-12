@@ -4,17 +4,34 @@ import { useEffect, useState } from 'react';
 import ProjectsPreview from '../components/ProjectsPreview'; // adjust path as needed
 import { scrollWithOffset } from '../utils/scrollWithOffset'
 
+
+
 type Skill = {
   name: string;
   color: string;
   value: number;
 };
+type ProfessionalAchievement = {
+  value: number;
+  label: string;
+};
+type Publication = {
+  title: string;
+  authors: string;
+  conference: string;
+  year: number;
+  abstract: string;
+  link: string;
+  kind: string;
+};
 
 export default function Home() {
   const [skillsData, setSkillsData] = useState<Record<string, Skill[]>>({}); // ✅ Moved here
+  const [achievements, setAchievements] = useState<ProfessionalAchievement[]>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [time, setTime] = useState(new Date());
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const [publications, setPublications] = useState<Publication[]>([]);
   
 
   useEffect(() => {
@@ -34,30 +51,40 @@ export default function Home() {
     setSkillsData(trimmedData);
   })
       .catch((err) => console.error('Failed to load skills data:', err));
+    
+      fetch('/Media/ProfessionalAchievements.json')
+        .then((res) => res.json())
+        .then((data) => setAchievements(data))
+        .catch((err) => console.error('Failed to load professional achievements:', err));
 
+      return () => clearInterval(timer);
+    }, []);
+  useEffect(() => {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }, []);
 
-    return () => clearInterval(timer);
-  }, []);
-
-const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('');
+  const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('');
 
   useEffect(() => {
     fetch('/Media/Publications.json')
-      .then(res => res.json())
-      .then((data) => {
+      .then((res) => res.json())
+      .then((data: Publication[]) => {
         if (!Array.isArray(data)) return;
-  
-        // Find the latest year
-        const latestYear = Math.max(...data.map(pub => pub.year));
-        
-        // Get first publication from that year
-        const latestPub = data.find(pub => pub.year === latestYear);
-  
+
+        setPublications(data);
+
+        const latestYear = Math.max(...data.map((pub) => pub.year));
+        const latestPub = data.find((pub) => pub.year === latestYear);
+
         if (latestPub) {
           setLatestPublicationTitle(latestPub.title);
         }
       })
-      .catch(err => console.error('Failed to load publications:', err));
+      .catch((err) => console.error('Failed to load publications:', err));
   }, []);
  
 
@@ -88,6 +115,14 @@ const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('')
   const words = introText.split(' ');
 
   const { hourAngle, minuteAngle, secondAngle } = getClockHandsAngles();
+
+  const journalPublicationsCount = publications.filter(
+      (pub) => pub.kind === 'Journal Publications'
+    ).length;
+
+    const conferencePublicationsCount = publications.filter(
+      (pub) => pub.kind === 'Conference Proceedings'
+    ).length;
 
   return (
     <div id="top" className="min-h-screen dark:bg-dark-bg transition-colors duration-300">
@@ -146,7 +181,7 @@ const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('')
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 animate-type">
-                  Researcher • Engineer • Lifelong Leaner
+                  Researcher • Engineer • Lifelong Learner
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
                   <HashLink smooth scroll={scrollWithOffset}
@@ -383,6 +418,45 @@ const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('')
   </div>
 </section>
 
+{/* Professional Achievements */}
+<section className="group relative transform hover:-translate-y-2 transition-all duration-300">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mt-16 p-8 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+        Professional Achievements
+      </h2>
+      
+      <div className="flex flex-wrap justify-center gap-8">
+
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+          <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">{journalPublicationsCount}</div>
+          <div className="text-gray-600 dark:text-gray-300 mt-2">Journal Publications</div>
+        </div>
+
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+          <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">{conferencePublicationsCount}</div>
+          <div className="text-gray-600 dark:text-gray-300 mt-2">Conference Publications</div>
+        </div>
+        {achievements.map((achievement, index) => (
+          <div
+            key={achievement.label}
+            className="w-full sm:w-1/2 md:w-1/3 lg:w-[28%] text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+              {achievement.value}
+            </div>
+            <div className="text-gray-600 dark:text-gray-300 mt-2">
+              {achievement.label}
+            </div>
+          </div>
+        ))}
+      </div>
+
+
+    </div>
+  </div>
+  
+</section>
 
       </div>
       

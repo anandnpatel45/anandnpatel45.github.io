@@ -38,7 +38,7 @@ useEffect(() => {
       description: "Performing research focused on knowledge transfer and resilience in manufacturing",
       achievements: [
         "(current) 4/4 GPA",
-        "Published 4 papers ",
+        "Published 9 papers ",
         "Teaching Assistant for mechanics of advanced manufacturing course."
       ]
     },

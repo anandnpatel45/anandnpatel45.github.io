@@ -153,10 +153,11 @@ export default function About() {
               <div className="prose max-w-none dark:prose-invert mt-2">
                 {/* ————————— ORIGINAL CONTENT ————————— */}
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-1 indent-12 text-justify fade-in opacity-0 translate-y-8 transition duration-700">
-                  I’m a researcher and engineer working at the intersection of manufacturing and machine learning. My journey has moved me from perfecting what’s taught to exploring the unknown, where curiosity now drives how I think, solve, and contribute. At the heart of it all, I find strength in something bigger than myself. When faced with doubt or exhaustion, I look up — to God, to the idea of purpose — and realign with what truly matters. That quiet reflection fuels a steady pursuit of meaningful work and grounded progress.
+                  I am a researcher and engineer working at the intersection of manufacturing and machine learning. Over time, my intellectual journey has shifted from mastering established frameworks to engaging with the uncertainty that lies beyond them. Curiosity now serves less as a tool for acquiring knowledge and more as a compass for navigating questions whose answers are not yet fully formed. It shapes how I approach problems, build systems, and contribute to the evolving landscape of intelligent manufacturing.
                 </p>
+
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-1 indent-12 text-justify fade-in opacity-0 translate-y-8 transition duration-700">
-                  Building better systems is only half the mission; the other half is forging a better me — through vigilance, constant  questioning, and a commitment to growth makes me move forward like John Wick on a righteous vendetta — focused, relentless, and unstoppable.
+                  Technical progress, however, is only part of the pursuit. Equally important is the continual refinement of the person behind the work. Periods of doubt or intellectual fatigue often call for reflection — a pause to reconnect with a sense of purpose beyond immediate outcomes. In that space, grounded by faith and introspection, I regain the clarity to continue the work with patience, discipline, and perspective.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mt-8 mb-3 border-l-4 border-blue-500 pl-4 fade-in opacity-0 translate-y-8 transition duration-700">
@@ -164,9 +165,9 @@ export default function About() {
                 </h2>
                 <div className="text-lg text-gray-600 dark:text-gray-300 mb-6 fade-in opacity-0 translate-y-8 transition duration-700">
                   <ul className="list-disc pl-12">
-                    <li>Knowledge transfer in manufacturing</li>
                     <li>Resilience in manufacturing</li>
                     <li>Intelligent manufacturing systems</li>
+                    <li>Knowledge curation in manufacturing</li>
                   </ul>
                 </div>
 
@@ -174,7 +175,7 @@ export default function About() {
                   From Ideas to Innovation: My story
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-3 indent-12 text-justify fade-in opacity-0 translate-y-8 transition duration-700">
-                 My journey began with a deep focus on mastering what was taught, but over time, I’ve come to embrace exploration. Today, I see growth not just in refining what I know, but in stepping into what I don’t. This shift, from being a structured learner to an intentional explorer, didn’t just change how I study or research; it reshaped how I think, how I design answers, and how I show up in every space I enter.
+                 My journey began with a strong focus on mastering established knowledge, but over time it gradually expanded toward exploration. I came to appreciate that learning does not end with understanding what is already known; it also involves engaging with questions that are still unfolding. This shift — from structured learning toward a more exploratory approach — has influenced how I think about research, how I approach problems, and how I continue to grow as a researcher.
                 </p>
 
                 {/* ———— TIMELINE TABLE (now data‑driven) ———— */}
@@ -184,10 +185,10 @@ export default function About() {
                   Exploring Life
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-1 indent-12 text-justify fade-in opacity-0 translate-y-8 transition duration-700">
-                  Outside my technical work, I’m drawn to spirituality and the deeper questions of life. I actively volunteer for youth upliftment activities and seminars — working on everything from planning and logistics to creative design and outreach. It’s one of the most fulfilling parts of my life.
+                  Outside my technical work, I am drawn to spirituality and the broader questions surrounding purpose and meaning. I volunteer in youth-oriented initiatives and seminars, contributing to areas such as planning, logistics, creative design, and outreach. These experiences offer a meaningful opportunity to engage with communities and contribute beyond the academic and technical sphere.
                 </p>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 indent-12 text-justify fade-in opacity-0 translate-y-8 transition duration-700">
-                  I’m also a movie enthusiast, an occasional reader of teen and spiritual books, and someone who’s recently started exploring the world of sports. I believe staying curious outside the lab is just as important as staying sharp inside it.
+                  In quieter moments, I enjoy films, occasional reading — particularly youth literature and spiritual writing — and have recently begun exploring sports. I find that curiosity beyond the lab often brings balance and perspective to the work within it.
                 </p>
 
                 <div className="mt-8 mb-4 p-6 bg-blue-100 dark:bg-blue-900/40 rounded-xl shadow-inner fade-in opacity-0 translate-y-8 transition duration-700">
@@ -196,35 +197,35 @@ export default function About() {
                   </h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
                     <li className="text-blue-900 dark:text-blue-100 text-lg">
-                        🎯&nbsp;&nbsp; Purpose-Driven Mindset
+                        🎯&nbsp;&nbsp; Purpose-driven mindset
                       </li>
                       <li className="text-blue-900 dark:text-blue-100 text-lg">
                         <span
-  style={{
-    display: 'inline-block',
-    backgroundColor: '#fff',
-    borderRadius: '50%',
-    padding: '0.2em',
-    transform: 'scale(0.8)',
-    transformOrigin: 'center center',
-    fontSize: '1.2em',
-  }}
->
-  🛡️
-</span>&nbsp;&nbsp; Integrity & Humility
-                      </li>
-                      <li className="text-blue-900 dark:text-blue-100 text-lg">
-                        🤝&nbsp;&nbsp; Collaboration & Contribution
+                          style={{
+                            display: 'inline-block',
+                            backgroundColor: '#fff',
+                            borderRadius: '50%',
+                            padding: '0.2em',
+                            transform: 'scale(0.8)',
+                            transformOrigin: 'center center',
+                            fontSize: '1.2em',
+                          }}
+                          >
+                          🛡️
+                        </span>&nbsp;&nbsp; Integrity & humility
                       </li>
                       <li className="text-blue-900 dark:text-blue-100 text-lg flex items-center">
 
                         <svg className="w-8 h-8 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <path fill="#3E96ED" d="M449 199C439 208 429 216 419 225 403 239 387 253 371 268 364 274 357 281 349 287 334 301 319 315 302 328 287 339 264 337 250 323 231 305 214 287 196 269 195 268 193 267 192 266 182 274 172 283 162 291 150 302 138 313 124 324 116 330 108 337 100 344 88 355 75 366 62 376 60 378 59 380 56 382 49 386 36 387 29 380 21 372 19 362 25 353 29 347 35 342 40 337 46 332 52 327 58 322 69 313 80 304 91 294 99 288 106 281 114 274 125 265 136 256 147 246 154 241 160 235 167 229 184 217 209 220 223 235 241 253 258 270 276 288 279 290 280 290 283 288 297 275 312 262 326 249 333 243 340 237 347 230 361 218 375 206 389 193 397 187 404 180 412 172 424 172 434 172 445 172 448 172 449 176 449 184 449 191 449 199Z"/>
-  <path fill="#004FAC" d="M449 199C449 191 449 184 449 176 449 173 448 172 445 172 434 172 424 172 412 172 396 172 380 172 363 172 351 172 342 163 342 151 342 140 351 129 363 129 397 129 431 129 466 129 471 129 475 130 479 130 483 131 487 136 490 140 490 145 491 149 492 154 492 182 492 210 492 239 492 248 483 258 467 257 457 256 449 248 449 237 449 225 449 212 449 199Z"/>
-  <path fill="#368FE7" d="M492 153C491 149 491 145 490 140 491 144 491 149 492 153ZM479 130C475 130 471 129 466 129 470 129 474 129 479 130ZM488 137C486 136 485 134 483 132 485 133 486 135 488 137ZM490 140C489 139 489 138 488 137 489 138 489 139 490 140ZM480 131C480 131 480 131 479 130 480 130 480 130 480 131ZM483 132C482 132 482 132 481 131 482 131 482 131 483 132Z"/>
-</svg> 
-  &nbsp;&nbsp;&nbsp; Excellence & Continuous Improvement
-</li>
+                          <path fill="#3E96ED" d="M449 199C439 208 429 216 419 225 403 239 387 253 371 268 364 274 357 281 349 287 334 301 319 315 302 328 287 339 264 337 250 323 231 305 214 287 196 269 195 268 193 267 192 266 182 274 172 283 162 291 150 302 138 313 124 324 116 330 108 337 100 344 88 355 75 366 62 376 60 378 59 380 56 382 49 386 36 387 29 380 21 372 19 362 25 353 29 347 35 342 40 337 46 332 52 327 58 322 69 313 80 304 91 294 99 288 106 281 114 274 125 265 136 256 147 246 154 241 160 235 167 229 184 217 209 220 223 235 241 253 258 270 276 288 279 290 280 290 283 288 297 275 312 262 326 249 333 243 340 237 347 230 361 218 375 206 389 193 397 187 404 180 412 172 424 172 434 172 445 172 448 172 449 176 449 184 449 191 449 199Z"/>
+                          <path fill="#004FAC" d="M449 199C449 191 449 184 449 176 449 173 448 172 445 172 434 172 424 172 412 172 396 172 380 172 363 172 351 172 342 163 342 151 342 140 351 129 363 129 397 129 431 129 466 129 471 129 475 130 479 130 483 131 487 136 490 140 490 145 491 149 492 154 492 182 492 210 492 239 492 248 483 258 467 257 457 256 449 248 449 237 449 225 449 212 449 199Z"/>
+                          <path fill="#368FE7" d="M492 153C491 149 491 145 490 140 491 144 491 149 492 153ZM479 130C475 130 471 129 466 129 470 129 474 129 479 130ZM488 137C486 136 485 134 483 132 485 133 486 135 488 137ZM490 140C489 139 489 138 488 137 489 138 489 139 490 140ZM480 131C480 131 480 131 479 130 480 130 480 130 480 131ZM483 132C482 132 482 132 481 131 482 131 482 131 483 132Z"/>
+                        </svg> 
+                        &nbsp;&nbsp;&nbsp; Excellence & continuous improvement
+                      </li>
+                      <li className="text-blue-900 dark:text-blue-100 text-lg">
+                        🤝&nbsp;&nbsp; Contribution & collaboration
+                      </li>
 
 
                     </ul>

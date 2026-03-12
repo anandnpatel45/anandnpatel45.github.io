@@ -7,7 +7,7 @@
     { "name": "Quick learner", "color": "#FF9800", "value": 15 },
     { "name": "Time management", "color": "#E91E63", "value": 13 }
   ],
-  "Thinking in Systems": [
+  "Technologies": [
     { "name": "COMSOL Multiphysics", "color": "#61DAFB", "value": 26 },
     { "name": "Autodesk Fusion 360", "color": "#4CAF50", "value": 30 },
     { "name": "LabVIEW", "color": "#FF4081", "value": 14 },

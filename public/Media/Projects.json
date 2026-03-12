@@ -1,18 +1,77 @@
 [
   {
-    "year": 2024,
+    "year": 2026,
     "highlight": 1,
-    "title": "Continuing minimal-defect production under material integrity cyberattacks",
-    "image": "/Media/2024_Cyberattack.gif",
-    "description": "Contributed to an AI framework for real-time defect recovery in manufacturing processes",
+    "title": "Hyperdimensional Computing for Energy-Efficient AI in Manufacturing",
+    "image": "/Media/2026_HDC.png",
+    "description": "Investigated hyperdimensional computing (HDC) as an energy-efficient AI paradigm for smart manufacturing, building domain-aware tuning strategies for sustainable machining quality prediction.",
     "features": [
-      "Demonstrated real-time in-raster defect recovery",
-      "Contributed to writing, reviewing, and editing",
-      "Created visualizations for the results"
+      "Analyzed sensitivity of HDC parameters across manufacturing datasets",
+      "Proposed domain-aware tuning strategies",
+      "Demonstrated comparable accuracy to conventional ML models with orders-of-magnitude reductions in training time and energy consumption",
+      "Developed hyperdimensional computing models for manufacturing process quality prediction"
     ],
-    "technologies": ["OriginPro"],
-    "paperUrl": "https://doi.org/10.1016/j.mfglet.2024.02.006",
+    "technologies": ["Python", "Machine Learning", "Hyperdimensional Computing"],
+    "paperUrl": "https://doi.org/10.1016/j.mfglet.2026.01.004",
+    "githubUrl": "#",
+    "additionalPapersUrl": [
+      "https://doi.org/10.48550/arXiv.2509.26131"
+    ]
+  },
+  {
+    "year": 2025,
+    "highlight": 1,
+    "title": "Large Language Models for Extrapolative Modeling of Manufacturing Processes",
+    "image": "/Media/2025_LLM_Modeling.png",
+    "description": "Developed an LLM-based framework that combines literature-derived knowledge with limited experimental data to build extrapolative manufacturing process models.",
+    "features": [
+      "Extracted process knowledge from literature using LLMs",
+      "Integrated knowledge with small experimental datasets",
+      "Enabled highly extrapolative manufacturing process modeling",
+      "Outperformed traditional machine learning approaches under limited data conditions"
+    ],
+    "technologies": ["Python", "Machine Learning", "Large Language Models"],
+    "paperUrl": "https://doi.org/10.1007/s10845-025-02638-w",
     "githubUrl": "#"
+  },
+  {
+    "year": 2025,
+    "highlight": 1,
+    "title": "Enhanced Magnet-aided Laser Induced Plasma Micromachining (E-MLIP)",
+    "image": "/Media/2025_EMLIP.png",
+    "description": "Studied magnetic-field-assisted laser induced plasma micromachining to improve feature resolution, machining depth, and material removal rate.",
+    "features": [
+      "Introduced magnetic-field-assisted plasma micromachining",
+      "Developed physics-based mechanism model for material removal",
+      "Improved feature resolution and machining depth simultaneously",
+      "Implemented acoustics-based in-situ feature prediction"
+    ],
+    "technologies": ["Laser Micromachining", "Manufacturing Process Monitoring", "Physics-based Modeling", "Python", "Machine Learning"],
+    "paperUrl": "https://doi.org/10.1016/j.cirp.2025.04.065",
+    "githubUrl": "#"
+  },
+  {
+    "year": 2025,
+    "highlight": 1,
+    "title": "Operational Resilience in Additive Manufacturing under Cyberphysical Attacks",
+    "image": "/Media/2024_Cyberattack.gif",
+    "description": "Developed AI based digital twin frameworks to detect and recover from cyberphysical attacks on additive manufacturing processes in real time.",
+    "features": [
+      "Developed AI-based framework for real-time single-shot defect recovery in additive manufacturing",
+      "Designed geometric and process digital twins to maintain production quality during cyberattacks",
+      "Demonstrated resilience against stealthy cyberphysical attacks in manufacturing systems"
+    ],
+    "technologies": [
+      "Fused Filament Fabrication", "LabVIEW", "Manufacturing Process Monitoring",      
+      "Python", "Machine Learning", "Digital Twins",      
+      "OriginPro"
+    ],
+    "paperUrl": "https://doi.org/10.1016/j.jmsy.2025.10.009",
+    "githubUrl": "#",
+    "additionalPapers": [
+      "https://doi.org/10.1016/j.mfglet.2024.02.006",
+      "https://doi.org/10.1115/ISFA2024-139964"
+    ]
   },
   {
     "year": 2024,
@@ -31,7 +90,7 @@
   },
   {
     "year": 2023,
-    "highlight": 1,
+    "highlight": 0,
     "title": "PSPOnto: An application ontology to aid in data-driven materials design",
     "image": "/Media/2023_PSPOnto.png",
     "description": "Proposed an ontology to standardize material informatics (MI) datasets.",
@@ -47,7 +106,7 @@
   },
   {
     "year": 2022,
-    "highlight": 1,
+    "highlight": 0,
     "title": "Case study of a connecting rod: evaluating different design approaches",
     "image": "/Media/2022_Connecting_Rod.png",
     "description": "Optimized the design of a connecting rod for stiffness and mass.",

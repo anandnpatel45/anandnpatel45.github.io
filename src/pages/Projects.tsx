@@ -117,14 +117,14 @@ function Projects() {
                           </p>
 
                           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h3>
-<ul className="grid grid-cols-1 gap-2 mb-6">
-  {project.features.map((feature, index) => (
-    <li key={index} className="flex items-start text-gray-600 dark:text-gray-300">
-      <span className="w-2 h-2 mt-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-2 flex-shrink-0"></span>
-      <span>{createLinkedDescription(feature, keywordLinks)}</span>
-    </li>
-  ))}
-</ul>
+                          <ul className="grid grid-cols-1 gap-2 mb-6">
+                            {project.features.map((feature, index) => (
+                              <li key={index} className="flex items-start text-gray-600 dark:text-gray-300">
+                                <span className="w-2 h-2 mt-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-2 flex-shrink-0"></span>
+                                <span>{createLinkedDescription(feature, keywordLinks)}</span>
+                              </li>
+                            ))}
+                          </ul>
 
 
                           <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Technologies Used:</h3>
@@ -142,18 +142,31 @@ function Projects() {
                           <div className="flex gap-4">
                             {project.paperUrl !== "#" && (
                               <HashLink smooth to={project.paperUrl} scroll={scrollWithOffset}
-      target="_blank"
-      rel="noopener noreferrer"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
                               >
                                 View publication
                               </HashLink>
                             )}
 
+                            {/* {project.additionalPapersUrl !== "#" && (
+                              <HashLink
+                                smooth
+                                to={project.additionalPapersUrl}
+                                scroll={scrollWithOffset}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm font-medium text-blue-600 dark:text-blue-400 underline underline-offset-2 hover:text-blue-700 dark:hover:text-blue-300"
+                              >
+                                Additional publications
+                              </HashLink>
+                            )} */}
+
                             {project.githubUrl !== "#" && (
                               <HashLink smooth to={project.githubUrl} scroll={scrollWithOffset}
-      target="_blank"
-      rel="noopener noreferrer"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                               >
                                 View Code

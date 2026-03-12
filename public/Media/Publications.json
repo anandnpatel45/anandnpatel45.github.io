@@ -1,15 +1,51 @@
 [
   {
-    "kind": "Other",
-    "title": "Large Language Models for Extrapolative Modeling of Manufacturing Processes",
-    "authors": "K N Khanghah, A Patel, R Malhotra, H Xu",
-    "conference": "arXiv",
-    "year": 2025,
-    "abstract": "This paper presents a novel LLM-based framework that combines literature-driven knowledge extraction with minimal experimental data to build highly extrapolative models, outperforming the conventional machine learning approach.",
-    "link": "https://doi.org/10.48550/arXiv.2502.12185"
+    "kind": "Journal Publications",
+    "title": "Hyperdimensional Computing for Sustainable Manufacturing: An Initial Assessment",
+    "authors": "D Hoang, A Patel, R Chen, R Malhotra, F Imani",
+    "conference": "Manufacturing Letters",
+    "year": 2026,
+    "abstract": "This work demonstrates that hyperdimensional computing can achieve comparable accuracy to conventional AI models for machining quality prediction while reducing training and inference energy and time by orders of magnitude.",
+    "link": "https://doi.org/10.1016/j.mfglet.2026.01.004"
   },
   {
-    "kind": "Conference Proceedings",
+    "kind": "Journal Publications",
+    "title": "Operational resilience of additively manufactured parts to stealthy cyberphysical attacks using geometric and process digital twins",
+    "authors": "J Cleeman, A Jackson, A Patel, Z Wang, T Feldhausen, C Shao, H Xu, R Malhotra",
+    "conference": "Journal of Manufacturing Systems",
+    "year": 2025,
+    "abstract": "This work presents a dual digital twin framework that maintains part quality and production yield in additive manufacturing by correcting geometry and process defects caused by stealthy cyberphysical attacks in real time.",
+    "link": "https://doi.org/10.1016/j.jmsy.2025.10.009"
+  },
+  {
+    "kind": "Other",
+    "title": "Domain-Aware Hyperdimensional Computing for Edge Smart Manufacturing",
+    "authors": "F J Piran, A Patel, R Malhotra, F Imani",
+    "conference": "arXiv",
+    "year": 2025,
+    "abstract": "This work shows that the performance of hyperdimensional computing (HDC) depends strongly on parameter choices and application type, and provides domain-aware tuning guidelines for efficient edge AI in manufacturing.",
+    "link": "https://doi.org/10.48550/arXiv.2509.26131"
+  },
+  {
+    "kind": "Journal Publications",
+    "title": "Large language models for extrapolative modeling of manufacturing processes",
+    "authors": "K N Khanghah, A Patel, R Malhotra, H Xu",
+    "conference": "Journal of Intelligent Manufacturing",
+    "year": 2025,
+    "abstract": "This paper presents a novel LLM-based framework that combines literature-driven knowledge extraction with minimal experimental data to build highly extrapolative models, outperforming the conventional machine learning approach.",
+    "link": "https://doi.org/10.1007/s10845-025-02638-w"
+  },
+  {
+    "kind": "Journal Publications",
+    "title": "Enhanced Magnet-aided Laser Induced Plasma Micromachining (E-MLIP) for Expanded Geometric Capabilities",
+    "authors": "R Malhotra, A Patel, K N Khanghah, H Xu",
+    "conference": "CIRP Annals",
+    "year": 2025,
+    "abstract": "This work introduces magnetic-field-assisted LIPMM that simultaneously enhances feature resolution, depth, and material removal rate, supported by a new physics-based mechanism model and an acoustics-based in-situ feature prediction method.",
+    "link": "https://doi.org/10.1016/j.cirp.2025.04.065"
+  },
+  {
+    "kind": "Conference Publications",
     "title": "Real-Time Recovery From Cyberattacks on Manufacturing Processes",
     "authors": "B Mangrolia, J Cleeman, A Patel, A Jackson, R Malhotra",
     "conference": "International Symposium on Flexible Automation",
@@ -27,7 +63,7 @@
     "link": "https://doi.org/10.1016/j.mfglet.2024.02.006"
   },
   {
-    "kind": "Conference Proceedings",
+    "kind": "Conference Publications",
     "title": "Toolpath Synthesis and Mechanical Properties in Multiplexed Fused Filament Fabrication",
     "authors": "J Cleeman, A Jackson, A Patel, R Malhotra",
     "conference": "ASME International Manufacturing Science and Engineering Conference",
