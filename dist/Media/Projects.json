@@ -1,0 +1,154 @@
+[
+  {
+    "year": 2026,
+    "highlight": 1,
+    "title": "Hyperdimensional Computing for Energy-Efficient AI in Manufacturing",
+    "image": "/Media/2026_HDC.png",
+    "description": "Investigated hyperdimensional computing (HDC) as an energy-efficient AI paradigm for smart manufacturing, building domain-aware tuning strategies for sustainable machining quality prediction.",
+    "features": [
+      "Analyzed sensitivity of HDC parameters across manufacturing datasets",
+      "Proposed domain-aware tuning strategies",
+      "Demonstrated comparable accuracy to conventional ML models with orders-of-magnitude reductions in training time and energy consumption",
+      "Developed hyperdimensional computing models for manufacturing process quality prediction"
+    ],
+    "technologies": ["Python", "Machine Learning", "Hyperdimensional Computing"],
+    "paperUrl": "https://doi.org/10.1016/j.mfglet.2026.01.004",
+    "githubUrl": "#",
+    "additionalPapersUrl": [
+      "https://doi.org/10.48550/arXiv.2509.26131"
+    ]
+  },
+  {
+    "year": 2025,
+    "highlight": 1,
+    "title": "Large Language Models for Extrapolative Modeling of Manufacturing Processes",
+    "image": "/Media/2025_LLM_Modeling.png",
+    "description": "Developed an LLM-based framework that combines literature-derived knowledge with limited experimental data to build extrapolative manufacturing process models.",
+    "features": [
+      "Extracted process knowledge from literature using LLMs",
+      "Integrated knowledge with small experimental datasets",
+      "Enabled highly extrapolative manufacturing process modeling",
+      "Outperformed traditional machine learning approaches under limited data conditions"
+    ],
+    "technologies": ["Python", "Machine Learning", "Large Language Models"],
+    "paperUrl": "https://doi.org/10.1007/s10845-025-02638-w",
+    "githubUrl": "#"
+  },
+  {
+    "year": 2025,
+    "highlight": 1,
+    "title": "Enhanced Magnet-aided Laser Induced Plasma Micromachining (E-MLIP)",
+    "image": "/Media/2025_EMLIP.png",
+    "description": "Studied magnetic-field-assisted laser induced plasma micromachining to improve feature resolution, machining depth, and material removal rate.",
+    "features": [
+      "Introduced magnetic-field-assisted plasma micromachining",
+      "Developed physics-based mechanism model for material removal",
+      "Improved feature resolution and machining depth simultaneously",
+      "Implemented acoustics-based in-situ feature prediction"
+    ],
+    "technologies": ["Laser Micromachining", "Manufacturing Process Monitoring", "Physics-based Modeling", "Python", "Machine Learning"],
+    "paperUrl": "https://doi.org/10.1016/j.cirp.2025.04.065",
+    "githubUrl": "#"
+  },
+  {
+    "year": 2025,
+    "highlight": 1,
+    "title": "Operational Resilience in Additive Manufacturing under Cyberphysical Attacks",
+    "image": "/Media/2024_Cyberattack.gif",
+    "description": "Developed AI based digital twin frameworks to detect and recover from cyberphysical attacks on additive manufacturing processes in real time.",
+    "features": [
+      "Developed AI-based framework for real-time single-shot defect recovery in additive manufacturing",
+      "Designed geometric and process digital twins to maintain production quality during cyberattacks",
+      "Demonstrated resilience against stealthy cyberphysical attacks in manufacturing systems"
+    ],
+    "technologies": [
+      "Fused Filament Fabrication", "LabVIEW", "Manufacturing Process Monitoring",      
+      "Python", "Machine Learning", "Digital Twins",      
+      "OriginPro"
+    ],
+    "paperUrl": "https://doi.org/10.1016/j.jmsy.2025.10.009",
+    "githubUrl": "#",
+    "additionalPapers": [
+      "https://doi.org/10.1016/j.mfglet.2024.02.006",
+      "https://doi.org/10.1115/ISFA2024-139964"
+    ]
+  },
+  {
+    "year": 2024,
+    "highlight": 1,
+    "title": "Throughput scaling and thermomechanical behaviour in Multiplexed Fused Filament Fabrication (MF3)",
+    "image": "/Media/2024_MF3.png",
+    "description": "Contributed to the development of a novel thermal model and toolpath synthesis for MF3, improving throughput and mechanical properties",
+    "features": [
+      "Enhanced the understanding of throughput scaling in MF3",
+      "Simulated mechanical behavior using COMSOL",
+      "Created visualizations for the results"
+    ],
+    "technologies": ["COMSOL Multiphysics", "OriginPro"],
+    "paperUrl": "https://doi.org/10.1016/j.cirp.2024.04.024",
+    "githubUrl": "#"
+  },
+  {
+    "year": 2023,
+    "highlight": 0,
+    "title": "PSPOnto: An application ontology to aid in data-driven materials design",
+    "image": "/Media/2023_PSPOnto.png",
+    "description": "Proposed an ontology to standardize material informatics (MI) datasets.",
+    "features": [
+      "Developed PSPOnto, an ontology for Process-Structure-Property (PSP) relations",
+      "Created knowledge base for MI datasets",
+      "Assembled corpus on manufacturing process parameters",
+      "Enabled efficient data storage and retrieval for PSP datasets"
+    ],
+    "technologies": ["Protege", "SPARQL", "Mendeley"],
+    "paperUrl": "https://etd.iisc.ac.in/handle/2005/6237",
+    "githubUrl": "#"
+  },
+  {
+    "year": 2022,
+    "highlight": 0,
+    "title": "Case study of a connecting rod: evaluating different design approaches",
+    "image": "/Media/2022_Connecting_Rod.png",
+    "description": "Optimized the design of a connecting rod for stiffness and mass.",
+    "features": [
+      "Compared literature-based, TPMS-based, topologically optimal, and generative design",
+      "TPMS-based IWP hollow structure found optimal",
+      "Performed peoperty homogenization for TPMS structures",
+      "Performed Design for Additive Manufacturing for the proposed geometries"
+    ],
+    "technologies": ["COMSOL MultiPhysics", "Autodesk Fusion 360", "MATLAB", "Generative design", "Design for AM"],
+    "paperUrl": "#",
+    "githubUrl": "#"
+  },  
+  {
+    "year": 2022,
+    "highlight": 0,
+    "title": "Establishing inverse process-structure linkage using a deep convolutional neural networks (CNN) approach",
+    "image": "/Media/2022_PSP_CNN.png",
+    "description": "Focused on validating the importance of microstructre metadata and demonstrated multi-input multi-output CNNs to inculcate that information.",
+    "features": [
+      "Modeled process-structure relations for Ultrahigh carbon steel and Ni-Co alloy",
+      "Achieved best results using microstructure+metadata input",
+      "Identified and addressed challenges with process-structure-property relations dataset"
+    ],
+    "technologies": ["Keras", "Google Collab", "Jupyter Notebook"],
+    "paperUrl": "https://etd.iisc.ac.in/handle/2005/6237",
+    "githubUrl": "#"
+  },
+  {
+    "year": 2021,
+    "highlight": 0,
+    "title": "Experimental thermal analysis of phase change materials (PCM) in domestic refrigerators",
+    "image": "/Media/2021_PCM.png",
+    "description": "Investigated the application of PCM to improve the energy efficiency of domestic refrigerators by elongating its refrigeration cycles.",
+    "features": [
+      "Designed and built experimental setup",
+      "Improved power consumption by 36.28%",
+      "Extended refrigeration cycle time by 104.34%",
+      "1st rank in College Project Expo 2021"
+    ],
+    "technologies": ["Experimental design", "Thermal analysis"],
+    "paperUrl": "#",
+    "githubUrl": "#"
+  }
+]
