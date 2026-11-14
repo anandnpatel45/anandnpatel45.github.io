@@ -2,15 +2,11 @@ import { ArrowRight, User, GraduationCap, FolderGit2, BookText, Code, ArrowLeft 
 import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import ProjectsPreview from '../components/ProjectsPreview'; // adjust path as needed
+import SkillCards from '../components/SkillCards';
 import { scrollWithOffset } from '../utils/scrollWithOffset'
 
 
 
-type Skill = {
-  name: string;
-  color: string;
-  value: number;
-};
 type ProfessionalAchievement = {
   value: number;
   label: string;
@@ -26,26 +22,13 @@ type Publication = {
 };
 
 export default function Home() {
-  const [skillsData, setSkillsData] = useState<Record<string, Skill[]>>({}); // ✅ Moved here
   const [achievements, setAchievements] = useState<ProfessionalAchievement[]>([]);
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [publications, setPublications] = useState<Publication[]>([]);
   
 
   useEffect(() => {
     setIsVisible(true);
-    
-    // ✅ Fetching skills JSON here
-    fetch('/Media/Skills.json')
-      .then((res) => res.json())
-      .then((data) => {
-    const entries = Object.entries(data).slice(0, 3); // Get first 3 sections
-    const trimmedData = Object.fromEntries(entries);  // Convert back to object
-
-    setSkillsData(trimmedData);
-  })
-      .catch((err) => console.error('Failed to load skills data:', err));
     
       fetch('/Media/ProfessionalAchievements.json')
         .then((res) => res.json())
@@ -257,72 +240,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white ml-4">Skills</h2>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {Object.entries(skillsData).map(([category, skills]) => (
-          <div key={category} className="space-y-4">
-            <h3 className="text-lg font-semibold text-center text-gray-900 dark:text-white capitalize">
-              {category}
-            </h3>
-            <div className="relative">
-              <svg className="w-full" viewBox="0 0 100 100">
-                {skills.map((skill, index) => {
-                  // Calculate the total value of all skills in the category
-                  const totalValue = skills.reduce((sum, skill) => sum + skill.value, 0);
-                  if (totalValue === 0) return null;  // Avoid division by zero
-
-                  // Calculate start and end angles based on the skill values
-                  const startAngle = (skills.slice(0, index).reduce((sum, s) => sum + s.value, 0) * 360) / totalValue;
-                  const endAngle = ((skills.slice(0, index + 1).reduce((sum, s) => sum + s.value, 0)) * 360) / totalValue;
-
-                  // Compute the x and y coordinates for the arc
-                  const x1 = 50 - 40 * Math.cos((startAngle * Math.PI) / 180);
-                  const y1 = 50 - 40 * Math.sin((startAngle * Math.PI) / 180);
-                  const x2 = 50 - 40 * Math.cos((endAngle * Math.PI) / 180);
-                  const y2 = 50 - 40 * Math.sin((endAngle * Math.PI) / 180);
-                  const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
-
-                  return (
-                    <path
-                      key={skill.name}
-                      d={`M 50 50 L ${x1} ${y1} A 40 40 0 ${largeArcFlag} 1 ${x2} ${y2} Z`}
-                      fill={skill.color}
-                      className={`transition-all duration-300 transform ${hoveredSkill === skill.name ? 'scale-110' : ''}`}
-                      style={{
-                        transformOrigin: '50% 50%', // Ensures the scaling happens from the center
-                      }}
-                      onMouseEnter={() => setHoveredSkill(skill.name)}
-                      onMouseLeave={() => setHoveredSkill(null)}
-                    />
-                  );
-                })}
-                <circle cx="50" cy="50" r="25" fill="white" className="dark:fill-gray-800" />
-              </svg>
-            </div>
-            <div className="space-y-2">
-              {skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className={`flex items-center justify-between text-sm p-2 rounded-lg transition-colors duration-300 ${
-                    hoveredSkill === skill.name
-                      ? 'bg-gray-100 dark:bg-gray-800'
-                      : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'
-                  }`}
-                  onMouseEnter={() => setHoveredSkill(skill.name)}
-                  onMouseLeave={() => setHoveredSkill(null)}
-                >
-                  <div className="flex items-center">
-                    <span
-                      className="w-3 h-3 rounded-full mr-2"
-                      style={{ backgroundColor: skill.color }}
-                    />
-                    <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      <SkillCards preview />
 
       <HashLink smooth scroll={scrollWithOffset}
         to="/skills"

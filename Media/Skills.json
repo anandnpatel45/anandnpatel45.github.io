@@ -4,7 +4,7 @@
     { "name": "Flexibility", "color": "#4CAF50", "value": 30 },
     { "name": "Team collaboration", "color": "#2196F3", "value": 11 },
     { "name": "Event coordination", "color": "#F44336", "value": 5 },
-    { "name": "Quick learner", "color": "#FF9800", "value": 15 },
+    { "name": "Quick learning", "color": "#FF9800", "value": 15 },
     { "name": "Time management", "color": "#E91E63", "value": 13 }
   ],
   "Technologies": [
@@ -23,7 +23,7 @@
     { "name": "Claude", "color": "#0288D1", "value": 5 },
     { "name": "Gemini", "color": "#F48FB1", "value": 10 },
     { "name": "Napkin AI", "color": "#F44336", "value": 12 },
-    { "name": "Notebook LM", "color": "#64B5F6", "value": 5 },
+    { "name": "NotebookLM", "color": "#64B5F6", "value": 5 },
     { "name": "Bolt AI", "color": "#9E9E9E", "value": 3 }
   ],
   "Language of Logic": [
