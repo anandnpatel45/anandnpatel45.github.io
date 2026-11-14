@@ -19,7 +19,7 @@ type Publication = {
   title: string;
   authors: string;
   conference: string;
-  year: number;
+  year: number | null;
   abstract: string;
   link: string;
   kind: string;
@@ -70,7 +70,7 @@ export default function Home() {
 
         setPublications(data);
 
-        const latestYear = Math.max(...data.map((pub) => pub.year));
+        const latestYear = Math.max(...data.map((pub) => pub.year ?? 0));
         const latestPub = data.find((pub) => pub.year === latestYear);
 
         if (latestPub) {

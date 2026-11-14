@@ -56,7 +56,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/Media/Anandkumar_CV.pdf"
+                <a href="/Media/Anandkumar_CV_latest.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-blue-400">Download my CV</a>

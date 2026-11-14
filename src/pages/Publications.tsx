@@ -8,7 +8,8 @@ interface Publication {
   title: string;
   authors: string;
   conference: string;
-  year: number;
+  year: number | null;
+  citations: number | null;
   abstract: string;
   link: string;
   kind: string; // Added kind to handle different publication types
@@ -89,7 +90,7 @@ export default function Publications() {
     }
   ];
 
-  const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
+  const sortedPublications = [...publications].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   const journalPublicationsCount = publications.filter(
       (pub) => pub.kind === "Journal Publications"
     ).length;
@@ -99,10 +100,10 @@ export default function Publications() {
     ).length;
 
   // Create a mapping of year to color index
-  const yearToColorMap = {};
+  const yearToColorMap: Record<string, (typeof colorPalette)[number]> = {};
   sortedPublications.forEach((pub, index) => {
-    if (!yearToColorMap[pub.year]) {
-      yearToColorMap[pub.year] = colorPalette[index % colorPalette.length];
+    if (!yearToColorMap[String(pub.year)]) {
+      yearToColorMap[String(pub.year)] = colorPalette[index % colorPalette.length];
     }
   });
 
@@ -172,7 +173,7 @@ export default function Publications() {
                     {isOpen && (
                       <div className="space-y-8">
                         {publicationsInSection.map((pub, index) => {
-                          const color = yearToColorMap[pub.year];
+                          const color = yearToColorMap[String(pub.year)];
 
                           return (
                             <div
@@ -186,13 +187,14 @@ export default function Publications() {
                               <p className="text-gray-600 dark:text-gray-300 mt-2">
                                 {
                                   pub.authors.split(', ').map((author, index) => 
-                                    author === "A Patel" ? <strong key={index}>{author}</strong> : author
+                                    /^(A|Anandkumar) Patel$/i.test(author) ? <strong key={index}>{author}</strong> : author
                                   ).reduce((prev, curr) => [prev, ', ', curr])
                                 } {" • "}
                               {/* </p> */}
                               {/* <p className="text-gray-600 dark:text-gray-300 mt-1"> */}
                                 <span className="italic text-gray-800 dark:text-gray-300">{pub.conference}</span>{" • "}
-                                <span className={`font-bold ${color.text}`}>{pub.year}</span>
+                                <span className={`font-bold ${color.text}`}>{pub.year ?? "Year unavailable"}</span>
+                                {pub.citations != null && <span> · {pub.citations} {pub.citations === 1 ? "citation" : "citations"}</span>}
                               </p>
                               <p className="text-gray-600 dark:text-gray-300 mt-4">{pub.abstract}{" "}
                                 <HashLink smooth to={pub.link} scroll={scrollWithOffset}

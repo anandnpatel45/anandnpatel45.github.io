@@ -52,7 +52,7 @@ export default function Navbar() {
 
             {/* CV Download stays a normal link */}
             <a
-              href="/Media/Anandkumar_CV.pdf"
+              href="/Media/Anandkumar_CV_latest.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 dark:text-gray-400 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-200"
