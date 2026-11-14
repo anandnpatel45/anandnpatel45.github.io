@@ -1,6 +1,6 @@
 {
   "Ways I contribute":[
-    { "name": "Purpose-driven mindest", "color": "#FFCC00", "value": 26 },
+    { "name": "Purpose-driven mindset", "color": "#FFCC00", "value": 26 },
     { "name": "Flexibility", "color": "#4CAF50", "value": 30 },
     { "name": "Team collaboration", "color": "#2196F3", "value": 11 },
     { "name": "Event coordination", "color": "#F44336", "value": 5 },
@@ -14,7 +14,7 @@
     { "name": "PTC Creo", "color": "#3178C6", "value": 14 },
     { "name": "AutoCAD", "color": "#DD0031", "value": 8 },
     { "name": "Image-Pro (Media Cybernetics)", "color": "#563D7C", "value": 3 },
-    { "name": "Protege", "color": "#81C784", "value": 5}
+    { "name": "Protégé", "color": "#81C784", "value": 5}
   ],
   
   "Smart Companions": [
@@ -33,11 +33,11 @@
   ],
   "Rythms of Work": [
     { "name": "VS Code", "color": "#F48FB1", "value": 40 },
-    { "name": "Jupyter Noteboook", "color": "#FF7043", "value": 10 },
-    { "name": "Google Collab", "color": "#0288D1", "value": 5 },
+    { "name": "Jupyter Notebook", "color": "#FF7043", "value": 10 },
+    { "name": "Google Colab", "color": "#0288D1", "value": 5 },
     { "name": "Microsoft Word", "color": "#81C784", "value": 20 },
     { "name": "LaTeX", "color": "#9E9E9E", "value": 5 },
-    { "name": "Endnote", "color": "#563D7C", "value": 10 },
+    { "name": "EndNote", "color": "#563D7C", "value": 10 },
     { "name": "OriginPro", "color": "#4CAF50", "value": 10 }
   ],
   "Languages": [

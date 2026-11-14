@@ -1,5 +1,4 @@
 // src/App.tsx
-import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
@@ -13,48 +12,6 @@ import Skills from './pages/Skills'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
-  // disable the browser's built-in scroll restoration
-  useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual'
-    }
-  }, [])
-  useEffect(() => {
-    // monkey‑patch scrollTo
-    const origScroll = window.scrollTo;
-    window.scrollTo = (...args) => {
-      console.log('[SCROLL TO] ', args, new Error().stack);
-      origScroll.apply(window, args);
-    };
-  
-    // monkey‑patch scrollIntoView
-    const origInto = Element.prototype.scrollIntoView;
-    // @ts-ignore
-    Element.prototype.scrollIntoView = function(...args) {
-      console.log('[INTO VIEW] ', this.id, args, new Error().stack);
-      // @ts-ignore
-      origInto.apply(this, args);
-    };
-  }, []);
-
-  useEffect(() => {
-    // patch scrollTo
-    const origScrollTo = window.scrollTo;
-    window.scrollTo = (...args) => {
-      console.log('[DEBUG scrollTo]', args, new Error().stack);
-      origScrollTo.apply(window, args);
-    };
-  
-    // patch scrollIntoView
-    const origInto = Element.prototype.scrollIntoView;
-    // @ts-ignore
-    Element.prototype.scrollIntoView = function(...args) {
-      console.log('[DEBUG scrollIntoView]', this.id, args, new Error().stack);
-      // @ts-ignore
-      origInto.apply(this, args);
-    };
-  }, []);
-
   return (
     <ThemeProvider>
       <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-dark-bg transition-colors duration-300">
