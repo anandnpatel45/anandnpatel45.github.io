@@ -1,4 +1,4 @@
-import { ArrowRight, User, GraduationCap, FolderGit2, BookText, Code, ArrowLeft, Clock } from 'lucide-react';
+import { ArrowRight, User, GraduationCap, FolderGit2, BookText, Code, ArrowLeft } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from 'react';
 import ProjectsPreview from '../components/ProjectsPreview'; // adjust path as needed
@@ -29,7 +29,6 @@ export default function Home() {
   const [skillsData, setSkillsData] = useState<Record<string, Skill[]>>({}); // ✅ Moved here
   const [achievements, setAchievements] = useState<ProfessionalAchievement[]>([]);
   const [isVisible, setIsVisible] = useState(false);
-  const [time, setTime] = useState(new Date());
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const [publications, setPublications] = useState<Publication[]>([]);
   
@@ -37,10 +36,6 @@ export default function Home() {
   useEffect(() => {
     setIsVisible(true);
     
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
     // ✅ Fetching skills JSON here
     fetch('/Media/Skills.json')
       .then((res) => res.json())
@@ -57,7 +52,6 @@ export default function Home() {
         .then((data) => setAchievements(data))
         .catch((err) => console.error('Failed to load professional achievements:', err));
 
-      return () => clearInterval(timer);
     }, []);
 
   const [latestPublicationTitle, setLatestPublicationTitle] = useState<string>('');
@@ -81,33 +75,8 @@ export default function Home() {
   }, []);
  
 
-  const formatTime = () => {
-    return new Intl.DateTimeFormat('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true,
-      timeZone: 'America/New_York'
-    }).format(time);
-  };
-
-  const getClockHandsAngles = () => {
-    const estTime = new Date(time.toLocaleString('en-US', { timeZone: 'America/New_York' }));
-    const hours = estTime.getHours() % 12;
-    const minutes = estTime.getMinutes();
-    const seconds = estTime.getSeconds();
-
-    const hourAngle = (hours * 30);
-    const minuteAngle = (minutes * 6);
-    const secondAngle = (seconds * 6);
-
-    return { hourAngle, minuteAngle, secondAngle };
-  };
-
   const introText = "Hello, I'm";
   const words = introText.split(' ');
-
-  const { hourAngle, minuteAngle, secondAngle } = getClockHandsAngles();
 
   const journalPublicationsCount = publications.filter(
       (pub) => pub.kind === 'Journal Publications'
@@ -191,56 +160,11 @@ export default function Home() {
                   </HashLink>
                 </div>
 
-                {/* Clock Component */}
-                <div className="mt-10 inline-flex bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 ml-8">
-                  <div className="flex items-center gap-4">
-                    <div className="relative w-14 h-14">
-                      {[...Array(12)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-1 bg-gray-600 dark:bg-gray-400 rounded-full"
-                          style={{
-                            left: '50%',
-                            top: '50%',
-                            transform: `rotate(${i * 30}deg) translate(0, -22px)`,
-      transformOrigin: 'center',
-      marginLeft: '-1.75px', // half of w-2 (8px)
-      marginTop: '-2px',  // half of h-2 (8px)
-                          }}
-                        ></div>
-                      ))}
-                      <div className="absolute inset-0 rounded-full border-2 border-brown-100 dark:border-brown-300"></div>
-                      <div
-                        className="absolute left-1/2 top-1/2 w-1 h-4 bg-gray-800 dark:bg-gray-200 rounded-full"
-                        style={{ 
-                          transform: `translate(-50%, -100%) rotate(${hourAngle}deg)`,
-                          transformOrigin: '50% 100%'
-                        }}
-                      ></div>
-                      <div
-                        className="absolute left-1/2 top-1/2 w-0.5 h-5 bg-blue-600 dark:bg-blue-400 rounded-full"
-                        style={{ 
-                          transform: `translate(-50%, -100%) rotate(${minuteAngle}deg)`,
-                          transformOrigin: '50% 100%'
-                        }}
-                      ></div>
-                      <div
-                        className="absolute left-1/2 top-1/2 w-0.5 h-5 bg-red-500 rounded-full"
-                        style={{ 
-                          transform: `translate(-50%, -100%) rotate(${secondAngle}deg)`,
-                          transformOrigin: '50% 100%'
-                        }}
-                      ></div>
-                      <div className="absolute left-1/2 top-1/2 w-2 h-2 bg-gray-900 dark:bg-gray-100 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">
-                        My Local Time (EST)
-                      </div>
-                      <div className="text-lg font-bold text-gray-800 dark:text-gray-200 tabular-nums">
-                        {formatTime()}
-                      </div>
-                    </div>
+                <div className="mt-8 inline-flex max-w-full items-center gap-3 rounded-xl border border-gray-200 bg-white/90 px-4 py-3 text-left shadow-lg dark:border-gray-700 dark:bg-gray-800/90">
+                  <GraduationCap aria-hidden="true" className="h-6 w-6 shrink-0 text-blue-600 dark:text-blue-400" />
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-white">PhD Candidate in Mechanical Engineering</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">Rutgers University</p>
                   </div>
                 </div>
               </div>
