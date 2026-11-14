@@ -40,7 +40,7 @@ useEffect(() => {
       description: "Performing research focused on knowledge transfer and resilience in manufacturing",
       achievements: [
         "(current) 4/4 GPA",
-        "Teaching Assistant for mechanics of advanced manufacturing course."
+        "Teaching assistant for graduate and undergraduate courses."
       ]
     },
     {

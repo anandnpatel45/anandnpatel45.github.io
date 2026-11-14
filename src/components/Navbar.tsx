@@ -15,9 +15,9 @@ export default function Navbar() {
   const navItems = [
     { path: '/',           label: 'Home',         icon: Home },
     { path: '/about',      label: 'About Me',     icon: User },
-    { path: '/education',  label: 'Education',    icon: GraduationCap },
     { path: '/projects',   label: 'Projects',     icon: FolderGit2 },
     { path: '/publications', label: 'Publications', icon: BookText },
+    { path: '/education',  label: 'Education',    icon: GraduationCap },
     { path: '/skills',     label: 'Skills',       icon: Code },
   ]
 

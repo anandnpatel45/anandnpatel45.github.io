@@ -274,28 +274,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Education Preview */}
-        <section className="group relative transform hover:-translate-y-2 transition-all duration-300">
-          <div id="education_preview" className="bg-white dark:bg-dark-card rounded-2xl shadow-xl overflow-hidden">
-            <div className="p-8">
-              <div className="flex items-center">
-                <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white ml-4">Education</h2>
-              </div>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                Engineer and researcher shaped by mechanical systems, now reimagining them through data and learning ...
-              </p>
-              <HashLink smooth scroll={scrollWithOffset}
-                to="/education"
-                className="mt-6 inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
-              >
-                View my educational background
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
-              </HashLink>
-            </div>
-          </div>
-        </section>
-
         {/* Projects Preview */}
         <ProjectsPreview />
 
@@ -318,6 +296,28 @@ export default function Home() {
                 className="mt-6 inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
               >
                 View all publications
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+              </HashLink>
+            </div>
+          </div>
+        </section>
+
+        {/* Education Preview */}
+        <section className="group relative transform hover:-translate-y-2 transition-all duration-300">
+          <div id="education_preview" className="bg-white dark:bg-dark-card rounded-2xl shadow-xl overflow-hidden">
+            <div className="p-8">
+              <div className="flex items-center">
+                <GraduationCap className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white ml-4">Education</h2>
+              </div>
+              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                Engineer and researcher shaped by mechanical systems, now reimagining them through data and learning ...
+              </p>
+              <HashLink smooth scroll={scrollWithOffset}
+                to="/education"
+                className="mt-6 inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+              >
+                View my educational background
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
               </HashLink>
             </div>

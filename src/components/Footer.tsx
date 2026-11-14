@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter, GraduationCap as GoogleScholar} from 'lucide-react';
 
 export default function Footer() {
+  const siteUpdated = import.meta.env.VITE_SITE_UPDATED;
   return (
     <footer id="contact" className="bg-gray-900 dark:bg-gray-800 text-white mt-auto">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -24,26 +25,26 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Profile Links</h3>
             <div className="space-y-3">
-              <a href="https://github.com/anandnpatel45" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <a href="https://scholar.google.com/citations?hl=en&user=8V5C3E8AAAAJ&view_op=list_works&sortby=pubdate"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-blue-400">
-                <Github className="w-5 h-5 mr-2" />
-                GitHub
+                <GoogleScholar className="w-5 h-5 mr-2" />
+                Google Scholar
               </a>
-              <a href="https://www.linkedin.com/in/anp444/" 
+              <a href="https://www.linkedin.com/in/anp444/"
                   target="_blank"
                   rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-blue-400">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </a>
-              <a href="https://scholar.google.com/citations?hl=en&user=8V5C3E8AAAAJ&view_op=list_works&sortby=pubdate" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <a href="https://github.com/anandnpatel45"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center text-gray-300 hover:text-blue-400">
-                <GoogleScholar className="w-5 h-5 mr-2" />
-                Google Scholar
+                <Github className="w-5 h-5 mr-2" />
+                GitHub
               </a>
               {/* <a href="https://twitter.com" className="flex items-center text-gray-300 hover:text-blue-400">
                 <Twitter className="w-5 h-5 mr-2" />
@@ -76,7 +77,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Anandkumar Patel. All rights reserved.
           </p>
           <p className="text-center text-gray-400">
-            Website designed and developed by Anandkumar Patel. Last updated March 2026.
+            Website designed and developed by Anandkumar Patel.
+            {siteUpdated && ` Last updated ${siteUpdated}.`}
           </p>
         </div>
       </div>
