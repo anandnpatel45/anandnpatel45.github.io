@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 // import ScrollToTop from '../components/ScrollToTop';
 import { useEffect } from 'react';
 import { scrollWithOffset } from '../utils/scrollWithOffset'
@@ -34,11 +35,11 @@ useEffect(() => {
     {
       degree: "Ph.D. in Mechanical Engineering",
       institution: "Rutgers University, USA",
-      period: "2023 - (expected 2027)",
+      period: "2023 – May 2027 (expected)",
+      showPublications: true,
       description: "Performing research focused on knowledge transfer and resilience in manufacturing",
       achievements: [
         "(current) 4/4 GPA",
-        "Published 9 papers ",
         "Teaching Assistant for mechanics of advanced manufacturing course."
       ]
     },
@@ -130,6 +131,11 @@ useEffect(() => {
                         </li>
                       ))}
                     </ul>
+                    {edu.showPublications && (
+                      <Link to="/publications" className="mt-4 inline-block text-blue-600 underline dark:text-blue-400">
+                        View research publications
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
