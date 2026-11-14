@@ -2,21 +2,29 @@
   {
     "year": 2026,
     "highlight": 1,
-    "title": "Hyperdimensional Computing for Energy-Efficient AI in Manufacturing",
-    "image": "/Media/2026_HDC.png",
-    "description": "Investigated hyperdimensional computing (HDC) as an energy-efficient AI paradigm for smart manufacturing, building domain-aware tuning strategies for sustainable machining quality prediction.",
+    "title": "Adaptive Defect Correction in Wire Arc Additive Manufacturing",
+    "illustration": "deposition",
+    "description": "Led research on closed-loop control that corrects humping, a surface defect that produces raised ridges during wire arc metal deposition.",
     "features": [
-      "Analyzed sensitivity of HDC parameters across manufacturing datasets",
-      "Proposed domain-aware tuning strategies",
-      "Demonstrated comparable accuracy to conventional ML models with orders-of-magnitude reductions in training time and energy consumption",
-      "Developed hyperdimensional computing models for manufacturing process quality prediction"
+      "Developed a controller that uses recent process settings and measured defect response to choose a correction without first identifying the disturbance.",
+      "In physical deposition tests with disturbances excluded from training, corrected 55 of 63 samples that required intervention (87.3%), versus 52.4% for each of two conventional controllers.",
+      "Reduced the mean humping metric by 84.2% across samples requiring correction."
     ],
-    "technologies": ["Python", "Machine Learning", "Hyperdimensional Computing"],
-    "paperUrl": "https://doi.org/10.1016/j.mfglet.2026.01.004",
-    "githubUrl": "#",
-    "additionalPapersUrl": [
-      "https://doi.org/10.48550/arXiv.2509.26131"
-    ]
+    "technologies": ["Wire Arc Additive Manufacturing", "Contextual Reinforcement Learning", "Closed-Loop Control"]
+  },
+  {
+    "year": 2026,
+    "highlight": 1,
+    "title": "Resilient Control and Rerouting for Manufacturing Systems",
+    "illustration": "routing",
+    "description": "Led research on how multi-process manufacturing systems can preserve part quality when machines respond differently to the same settings from one run to the next.",
+    "features": [
+      "Coordinated machine-level adjustments with system-level rerouting so the next operation can compensate when the current machine cannot recover part quality on its own.",
+      "Built a system digital twin that uses the results of earlier actions to choose corrections without identifying disturbances or retraining the policy.",
+      "In the GUARD simulation study, reduced final-product deviation by up to 62% in an agile manufacturing system.",
+      "In a separate digital-twin simulation, raised product yield from 2.34% to 32.22% under simultaneous disturbances, including disturbances excluded from training."
+    ],
+    "technologies": ["System Digital Twin", "Contextual Reinforcement Learning", "Process Rerouting"]
   },
   {
     "year": 2025,

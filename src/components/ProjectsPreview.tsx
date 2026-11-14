@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { scrollWithOffset } from '../utils/scrollWithOffset'
 import { ArrowRight, FolderGit2 } from 'lucide-react';
+import ProjectIllustration from './ProjectIllustration';
 
 type Project = {
   title: string;
-  image: string;
-  alt: string;
+  image?: string;
+  illustration?: string;
+  alt?: string;
   features: string[];
   highlight: number;
   year: string | number;
@@ -78,11 +80,11 @@ export default function ProjectsPreview() {
                       style={{ width: '300px' }}
                     >
                       <div className="aspect-video overflow-hidden">
-                        <img
+                        {project.image ? <img
                           src={project.image}
-                          alt={project.alt}
+                          alt={project.alt ?? ''}
                           className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-300"
-                        />
+                        /> : <ProjectIllustration variant={project.illustration} />}
                       </div>
                       <div className="p-4">
                         <h3 className="font-semibold text-gray-900 dark:text-white text-lg">{project.title}</h3>

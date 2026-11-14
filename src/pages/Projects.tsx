@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 // import ScrollToTop from '../components/ScrollToTop';
 import React from 'react'; // Make sure this is imported for JSX types
+import ProjectIllustration from '../components/ProjectIllustration';
 
 // Helper to turn "AI Code Assistant" into "ai-code-assistant"
 const slugify = (text: string) =>
@@ -98,11 +99,11 @@ function Projects() {
                     >
                       <div className="md:flex">
                         <div className="md:w-3/5">
-                          <img
+                          {project.image ? <img
                             src={project.image}
                             alt={project.title}
                             className="w-full h-full object-cover"
-                          />
+                          /> : <ProjectIllustration variant={project.illustration} />}
                         </div>
                         <div className="p-8 md:w-2/5">
                           <div className="flex items-center justify-between mb-4">
@@ -140,7 +141,7 @@ function Projects() {
                           </div>
 
                           <div className="flex gap-4">
-                            {project.paperUrl !== "#" && (
+                            {project.paperUrl && project.paperUrl !== "#" && (
                               <HashLink smooth to={project.paperUrl} scroll={scrollWithOffset}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -163,7 +164,7 @@ function Projects() {
                               </HashLink>
                             )} */}
 
-                            {project.githubUrl !== "#" && (
+                            {project.githubUrl && project.githubUrl !== "#" && (
                               <HashLink smooth to={project.githubUrl} scroll={scrollWithOffset}
                                 target="_blank"
                                 rel="noopener noreferrer"
