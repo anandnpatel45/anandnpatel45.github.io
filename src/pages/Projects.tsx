@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 // import ScrollToTop from '../components/ScrollToTop';
 import React from 'react'; // Make sure this is imported for JSX types
-import ProjectIllustration from '../components/ProjectIllustration';
 
 // Helper to turn "AI Code Assistant" into "ai-code-assistant"
 const slugify = (text: string) =>
@@ -99,11 +98,11 @@ function Projects() {
                     >
                       <div className="md:flex">
                         <div className="md:w-3/5">
-                          {project.image ? <img
+                          <img
                             src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                          /> : <ProjectIllustration variant={project.illustration} />}
+                            alt={project.alt ?? project.title}
+                            className={`w-full h-full ${project.imageFit === 'contain' ? 'bg-white object-contain' : 'object-cover'}`}
+                          />
                         </div>
                         <div className="p-8 md:w-2/5">
                           <div className="flex items-center justify-between mb-4">

@@ -3,7 +3,9 @@
     "year": 2026,
     "highlight": 1,
     "title": "Adaptive Defect Correction in Wire Arc Additive Manufacturing",
-    "illustration": "deposition",
+    "image": "/Media/2026_WAAM_Setup.png",
+    "alt": "Wire arc deposition apparatus and schematic showing the nozzle, camera, build plate, and cooling fan.",
+    "imageFit": "contain",
     "description": "Led research on closed-loop control that corrects humping, a surface defect that produces raised ridges during wire arc metal deposition.",
     "features": [
       "Developed a controller that uses recent process settings and measured defect response to choose a correction without first identifying the disturbance.",
@@ -16,7 +18,9 @@
     "year": 2026,
     "highlight": 1,
     "title": "Resilient Control and Rerouting for Manufacturing Systems",
-    "illustration": "routing",
+    "image": "/Media/2026_System_Digital_Twin.png",
+    "alt": "System Digital Twin diagram showing how process control and rerouting agents adjust settings and select the next operation.",
+    "imageFit": "contain",
     "description": "Led research on how multi-process manufacturing systems can preserve part quality when machines respond differently to the same settings from one run to the next.",
     "features": [
       "Coordinated machine-level adjustments with system-level rerouting so the next operation can compensate when the current machine cannot recover part quality on its own.",
